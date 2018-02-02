@@ -1,0 +1,22 @@
+= Service Mesh Integration Using Conduit
+:toc:
+:icons:
+:linkcss:
+:imagesdir: ../../../resources/images
+
+
+
+
+You are now ready to continue on with the workshop!
+
+:frame: none
+:grid: none
+:valign: top
+
+[align="center", cols="2", grid="none", frame="none"]
+|=====
+|image:button-continue-standard.png[link=../../02-path-working-with-clusters/202-service-mesh]
+|image:button-continue-operations.png[link=../../02-path-working-with-clusters/202-service-mesh]
+|link:../readme.adoc[Go to Standard Index]
+|link:../readme.adoc[Go to Operations Index]
+|=====
