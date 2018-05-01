@@ -1,0 +1,57 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kube-admin
+  labels:
+    name: kube-admin
+    release: stable
+    scope: cluster
+  annotations:
+    description: |
+      This namespace holds all the user install cluster-wide tools, this helps
+      to not polute the kube-system namespace
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production-workshop
+  labels:
+    name: production-workshop
+    release: stable
+    environment: production
+  annotations:
+    description: |
+      This namespace holds the production workshop deployment, service and
+      ingress. This typically shouldn't need manual intervention. Most deploys
+      into this environment will happen via the build process
+  
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: builder
+  labels:
+    name: builder
+    release: stable
+    scope: cluster
+  annotations:
+    description: |
+      This namespace holds all the build level tooling, things like Jenkins and
+      the Github management operations.
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staging-workshop
+  labels:
+    name: builder
+    release: stable
+    environment: staging
+  annotations:
+    description: |
+      This namespace holds all the staging deploys from Github Pull Requests 
+      allowing you to preview the workshop from link that gets submitted to the
+      PR.

@@ -1,0 +1,38 @@
+= Creating Your Own Workshop
+
+If you'd like to create your own workshop to run you can do this by copying the
+`yaml` files in this directory and chosing the modules you want to be included
+from the `_modules.yaml` file at the root of this project.
+
+== Sample Workshop
+
+For example if you wanted to create a new workshop that just showed the
+beginning environment and cluster creation modules you can do that by making a
+file like the following.
+
+[source,shell]
+----
+---
+id: sample
+name: Sample Track
+workshop_title: Kubernetes the AWSome Way
+revision: sample-track
+logo: logo.svg
+enable_issue_submission: true
+repo_url: https://github.com/aws-samples/aws-workshop-for-kubernetes
+
+content:
+  url: https://raw.githubusercontent.com/aws-samples/aws-workshop-for-kubernetes/master
+
+modules:
+  activate:
+  - environment_readme
+  - create-cluster_readme
+----
+
+Then if you would like to run this module locally you can use `docker`.
+
+[source,shell]
+----
+docker run --rm -p 8080:8080 -v ${PWD}:/app-data -e CONTENT_URL_PREFIX="file:///app-data" -e WORKSHOPS_URLS="file:///app-data/_workshops/sample.yaml" christopherhein/workshopper:latest
+----

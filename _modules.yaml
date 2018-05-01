@@ -1,0 +1,35 @@
+config:
+  vars:
+  - name: USE_CLOUD9
+    desc: Are we using Cloud9 to setup the environment.
+    value: true
+  - name: CLUSTER_NAME
+    desc: Name of the kops cluster.
+    value: example.bluster.k8s.local
+
+modules:
+  environment_readme:
+    name: Environment
+    vars:
+      USE_CLOUD9:
+      CLUSTER_NAME:
+  create-cluster_readme:
+    name: Create Cluster
+    requires:
+    - environment_readme
+    vars:
+      USE_CLOUD9:
+      CLUSTER_NAME:
+  kubernetes-concepts_readme:
+    name: Kubernetes Concepts
+    vars:
+      USE_CLOUD9:
+      CLUSTER_NAME:
+  cleanup_readme:
+    name: Clean Up
+    requires:
+    - create-cluster_readme
+    - environment_readme
+    vars:
+      USE_CLOUD9:
+      CLUSTER_NAME:

@@ -1,0 +1,26 @@
+replicaCount: 1
+
+environment: staging
+
+image:
+  repository: christopherhein/workshopper
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  path: /
+  hosts:
+    - test.k8sworkshop.com
+
+content:
+  urlPrefix: https://raw.githubusercontent.com/christopherhein/aws-workshop-for-kubernetes/feature/workshop-2-0-1
+  workshopURLS: |
+    https://raw.githubusercontent.com/christopherhein/aws-workshop-for-kubernetes/feature/workshop-2-0-1/_workshops/kops_ops.yaml,https://raw.githubusercontent.com/christopherhein/aws-workshop-for-kubernetes/feature/workshop-2-0-1/_workshops/kops_dev.yaml

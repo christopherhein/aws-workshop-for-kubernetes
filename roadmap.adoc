@@ -1,0 +1,24 @@
+= Roadmap
+
+This document defines the plans for the AWS Workshop for Kubernetes. This
+workshop has over 300 forks, and almost 1200 stars and almost 60 contributors.
+To keep everyone in-sync this document will be the short, long, and someday
+plans for making this workshop even better.
+
+== Short Term
+
+- [ ] Issue clean up, _a number of issues are stale at this point, clean these
+  up_
+- [ ] Bug clean up, _we currently have a number of issues that are causing the
+  most issues for our customers. These issues are tagged with `bug-clean-up-1`_
+- [ ] Add `VERSION` file so we can keep track of where the release is and what
+  versions of k8s/kops it's tracking.
+
+== Long Term
+
+- [ ] Setup domain redirects
+- [ ] Design better presentation mechanism
+
+== Someday
+
+- [ ] 

@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "k8s-workshop.fullname" . }}
+  labels:
+    app: {{ template "k8s-workshop.fullname" . }}
+    chart: {{ template "k8s-workshop.chart" . }}
+    release: {{ .Release.Name }}
+    environment: {{ .Values.environment }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "k8s-workshop.fullname" . }}
+        chart: {{ template "k8s-workshop.chart" . }}
+        release: {{ .Release.Name }}
+        environment: {{ .Values.environment }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - name: http
+          containerPort: 8080
+        env:
+        - name: CONTENT_URL_PREFIX
+          value: {{ .Values.content.urlPrefix }}
+        - name: WORKSHOPS_URLS
+          value: {{ .Values.content.workshopURLS }}

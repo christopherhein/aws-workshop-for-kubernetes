@@ -1,0 +1,8 @@
+apiVersion: v1
+appVersion: "0.0.1"
+description: |
+  This chart deploys the Kubernetes the AWSome Way workshop to your cluster
+  to get up an running fast you can install this using our helm repository.
+  https://helm.k8sworkshop.com or install from source.
+name: k8s-workshop
+version: 0.0.1

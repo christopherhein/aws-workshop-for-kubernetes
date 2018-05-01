@@ -1,0 +1,25 @@
+---
+id: ops
+name: kops Operations Track
+workshop_title: Kubernetes the AWSome Way
+revision: ops-track
+logo: logo.svg
+enable_issue_submission: true
+repo_url: https://github.com/aws-samples/aws-workshop-for-kubernetes
+
+content:
+  url: https://raw.githubusercontent.com/christopherhein/aws-workshop-for-kubernetes/feature/workshop-2-0-1
+  module_file: _modules.yaml
+
+vars:
+  USE_CLOUD9: true
+  LOGGING_ENABLED: true
+  METRICS_ENABLED: true
+  CLUSTER_NAME: example.cluster.k8s.local
+
+modules:
+  activate:
+  - "environment_readme"
+  - "create-cluster_readme"
+  - "kubernetes-concepts_readme"
+  - "cleanup_readme"

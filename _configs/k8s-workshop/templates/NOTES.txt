@@ -1,0 +1,5 @@
+Thanks for installing the Kubernetes the AWSome Way workshop, depending the
+values used to deploy this you can access it via the exposed service or using
+the Ingress configuration.
+
+# TODO: Fill this out with the proper information based on the type of deploy
